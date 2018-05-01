@@ -1,0 +1,21 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 94, in script
+    jump testing
+ScriptError: could not find label 'testing'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 94, in script
+    jump testing
+  File "C:\Users\fgodi\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 1527, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\fgodi\Desktop\renpy-6.99.12.4-sdk\renpy\script.py", line 858, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'testing'.
+
+Windows-8-6.2.9200
+Ren'Py 6.99.12.4.2187
+Memory Leak Prototype 1.0
