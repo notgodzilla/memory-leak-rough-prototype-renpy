@@ -1,8 +1,8 @@
 ﻿define a = Character("Ada")
 image ada normal = "images/ada.png"
-define s = Character("Sybil") 
+define ax  = Character("Alyx") 
 image bg e-den = "images/afterlife.png" 
-      
+ 
 label start:  
     ### Boolean for meeting ada
     $ met_ada = False
@@ -23,8 +23,6 @@ label start:
     
     $ gestalt = Gestalt("GESTALT",8)
     jump meeting_ada
-
-
 
 label meeting_ada:
     show screen memento_overlay
@@ -52,20 +50,17 @@ label meeting_ada:
     $ frontal.take(frontal_mem)
     $ frontal.take(frontal_mem1) 
     
-
-    
     $ gestalt = Gestalt("GESTALT",8)
     
-
     show screen test_other_screens
     show screen other_hbox
       
-    jump looping
+    jump meeting_ada
     
 label conditions_met: 
    a "Test passed - having three memories in Gestalt triggers this label option"
+   jump bedroom_sstart 
 
-    
 screen memento_overlay:
     frame:
         yalign 0.0 xalign 0.0
@@ -89,20 +84,10 @@ label show_ada_menu:
         "Option 2":
             jump meeting_ada
         "Option 3" if gestalt.current_size == 3:
-            jump conditions_met
+            jump bedroom_start 
         "Back":
-            pass
+            jump meeting_ada 
             
-
-            
-
-    
-label looping:
-    $ renpy.pause()
-    jump looping
-    
-
-
 
 screen overlay:
     frame:
